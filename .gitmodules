@@ -1,0 +1,3 @@
+[submodule "vrnetlab"]
+	path = vrnetlab
+	url = https://github.com/vrnetlab/vrnetlab.git
