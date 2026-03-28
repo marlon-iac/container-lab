@@ -1,0 +1,13 @@
+name: vpn
+
+topology:
+
+  nodes:
+    csr1:
+      kind: cisco_csr1000v
+      image: vrnetlab/vr-csr:17.04.03
+      # startup-config: ./csr1-startup.cfg   # descomente quando quiser usar config inicial
+
+    # csr2:                                   # descomente se quiser adicionar segundo router
+    #   kind: cisco_csr1000v
+    #   image: vrnetlab/vr-csr:17.04.03

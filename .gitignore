@@ -1,0 +1,21 @@
+.vagrant
+.env
+.cache
+.dotnet
+.wget*
+.vscode-server
+.bash_history
+.docker
+.nvm
+.npm
+.config
+*.qcow2
+
+# Configuração para a pasta labs/
+# Ignora tudo dentro de labs/
+labs/**
+# Mas permite versionar arquivos de topologia *.clab.yml
+!labs/*.clab.yml
+!labs/*.clab.yaml
+!labs/**/*.clab.yml
+!labs/**/*.clab.yaml
