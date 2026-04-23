@@ -29,7 +29,7 @@ Para garantir isolamento e reprodutibilidade, o projeto utiliza uma estrutura em
     ```bash
     vagrant up
     ```
-    *O comando acima executa o script `setup.sh`, que instala automaticamente o Docker, Containerlab, NVM, Node.js, Gemini CLI e ishare2.*
+    *O comando acima executa o script `setup.sh`, que instala automaticamente o Docker, Containerlab e ishare2.*
 
 3.  **Acesse a VM:**
     ```bash
@@ -42,7 +42,6 @@ O arquivo `setup.sh` automatiza tarefas de instalação no projeto:
 
 *   **Instalação do Containerlab & Docker:** Usa o instalador oficial.
 *   **Permissões de Usuário:** Adiciona o usuário `vagrant` aos grupos `docker` e `clab_admins`.
-*   **Ambiente Node.js:** Instala o `nvm` e a versão LTS do Node para o funcionamento do `gemini-cli`.
 *   **Ferramentas Auxiliares:** Baixa e configura o `ishare2-cli` para download simplificado de imagens.
 
 ---

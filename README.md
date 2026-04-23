@@ -1,22 +1,18 @@
-# Container-lab com Vagrant & Gemini CLI
+# Container-lab com Vagrant
 
-Repositório pessoal para simulação e teste de topologias de rede avançadas em containers, utilizando **Containerlab** e imagens de roteadores proprietários via **vrnetlab**.
+Repositório pessoal para simulação e teste de topologias de rede em containers, utilizando **Containerlab** e imagens de roteadores proprietários via **vrnetlab**.
 
 ---
 
 ## 🏗️ Estrutura do Projeto
 
-O ambiente é orquestrado em camadas para garantir que você tenha tudo o que precisa sem sujar seu sistema host:
-
-1.  **Vagrant:** Provisiona uma VM Ubuntu 22.04 isolada.
-2.  **Docker:** Motor de execução dos roteadores.
+1.  **Vagrant:** Provisiona uma VM Ubuntu 22.04 isolada com virtualização habilitada
 3.  **vrnetlab:** Converte imagens `.qcow2` (Cisco, Juniper, etc.) em containers Docker.
 4.  **Containerlab:** Ferramenta que desenha e conecta os roteadores.
-5.  **Gemini CLI:** Assistente de IA no terminal para acelerar configurações.
 
 ---
 
-## 🚀 Quick Start (5 Minutos)
+## 🚀 Quick Start
 
 Se você já tem o **Vagrant** instalado, siga os passos abaixo para subir o ambiente completo:
 
@@ -56,6 +52,5 @@ Para entender a fundo como o projeto funciona ou como realizar tarefas específi
 
 *   [Containerlab](https://containerlab.dev/)
 *   [Vagrant](https://www.vagrantup.com/)
-*   [vrnetlab](https://github.com/vrnetlab/vrnetlab)
+*   [vrnetlab](https://github.com/srl-labs/vrnetlab)
 *   [ishare2-cli](https://github.com/ishare2-org/ishare2-cli)
-*   [Google Gemini CLI](https://github.com/google/gemini-cli)

@@ -2,58 +2,57 @@
 
 Para rodar roteadores (Cisco, Juniper, etc.) em containers, precisamos passar por um fluxo de conversão. Este projeto automatiza parte desse processo.
 
-## 📥 Etapa 1: Download de Imagens (`ishare2-cli`)
+## 📥 Etapa 1: Download de Imagens
 
-O `ishare2-cli` é uma ferramenta essencial para buscar e baixar imagens `.qcow2` de roteadores proprietários diretamente do **LabHub**.
+Pode baixar as imagens das seguintes referencias:
 
-### Como usar o `ishare2`:
+- https://drive.labhub.eu.org/
 
-1.  **Buscar uma imagem:**
-    ```bash
-    ishare2 search csr1000v
-    ```
+### Imagens testadas
 
-2.  **Baixar a imagem desejada:**
-    ```bash
-    ishare2 pull <tipo_imagem> <id_da_imagem>
-    ```
+#### Cisco
 
-*As imagens baixadas geralmente são arquivos `.qcow2`. Elas não rodam nativamente no Docker sem conversão.*
+- csr1000vng-universalk9.16.04.01: funciona
+- csr1000vng-universalk9.17.03.08a-serial: funciona
 
 ---
 
 ## 🏗️ Etapa 2: Conversão para Docker (`vrnetlab`)
 
-O [vrnetlab](https://github.com/vrnetlab/vrnetlab) é o "pulo do gato". Ele cria um wrapper em volta da imagem QEMU (o `.qcow2`) para que ela se comporte como um container Docker padrão.
+O [vrnetlab](https://github.com/srl-labs/vrnetlab) é o "pulo do gato". Ele cria um wrapper em volta da imagem QEMU (o `.qcow2`) para que ela se comporte como um container Docker padrão.
 
 ### Exemplo: Criando imagem para o Cisco CSR1000v
 
 1.  **Acesse o diretório do dispositivo desejado no `vrnetlab/`:**
+
     ```bash
-    cd vrnetlab/csr/
+    cd vrnetlab/cisco/csr1000v
     ```
 
 2.  **Mova o arquivo `.qcow2` baixado para este diretório:**
+
     ```bash
-    mv ~/downloads/csr1000v-universalk9.17.03.04.qcow2 .
+    mv <caminho_do_download>/csr1000v-universalk9.17.03.04.qcow2 vrnetlab/cisco/csr1000v
     ```
 
 3.  **Inicie o build da imagem Docker:**
+
     ```bash
     make docker-image
     ```
 
 4.  **Verifique a imagem criada:**
+
     ```bash
-    docker images | grep vr-csr
+    docker images
     ```
 
 ---
 
 ## Limpeza e Boas Práticas
 
-*   **Libere espaço:** Após o comando `make docker-image` finalizar com sucesso, você pode remover o arquivo `.qcow2` original para economizar espaço em disco na VM.
-*   **Versionamento:** Sempre anote a tag da imagem gerada (ex: `vr-csr:17.03.04`). Você precisará dessa tag exata no seu arquivo de topologia do Containerlab (`.clab.yml`).
+*   **Libere espaço:** Após o comando `make docker-image` finalizar com sucesso, você pode remover o arquivo `.qcow2` original para economizar espaço em disco.
+*   **Versionamento:** Sempre anote a tag da imagem gerada (ex: `vrnetlab/cisco_csr1000v:17.03.08`). Você precisará dessa tag exata no seu arquivo de topologia do Containerlab (`.clab.yml`).
 
 ---
 [⬅️ Voltar: Configuração do Ambiente](./01-setup-ambiente.md) | [Próximo Passo: Execução de Laboratórios ➡️](./03-uso-containerlab.md)
