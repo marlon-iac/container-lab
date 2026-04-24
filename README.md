@@ -41,10 +41,9 @@ Se você já tem o **Vagrant** instalado, siga os passos abaixo para subir o amb
 Para entender a fundo como o projeto funciona ou como realizar tarefas específicas, siga o fluxo de leitura:
 
 1.  **[Configuração do Ambiente](./docs/01-setup-ambiente.md):** Detalhes sobre a VM, Vagrant e provisionamento.
-2.  **[Gerenciamento de Imagens](./docs/02-gerenciamento-imagens.md):** Como baixar (`ishare2`) e converter imagens para Docker (`vrnetlab`).
+2.  **[Gerenciamento de Imagens](./docs/02-gerenciamento-imagens.md):** Como baixar imagens e converter imagens para Docker (`vrnetlab`).
 3.  **[Execução de Laboratórios](./docs/03-uso-containerlab.md):** Comandos do Containerlab e como rodar as topologias.
-4.  **[Uso do Gemini CLI](./docs/04-gemini-cli.md):** Como usar a inteligência artificial para auxiliar nas configurações.
-5.  **[Troubleshooting](./docs/05-troubleshooting.md):** Soluções para problemas comuns e dicas de performance.
+4.  **[Troubleshooting](./docs/04-troubleshooting.md):** Soluções para problemas comuns e dicas de performance.
 
 ---
 
@@ -53,4 +52,3 @@ Para entender a fundo como o projeto funciona ou como realizar tarefas específi
 *   [Containerlab](https://containerlab.dev/)
 *   [Vagrant](https://www.vagrantup.com/)
 *   [vrnetlab](https://github.com/srl-labs/vrnetlab)
-*   [ishare2-cli](https://github.com/ishare2-org/ishare2-cli)
